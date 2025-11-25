@@ -47,12 +47,13 @@ export default function App() {
     setError("");
     try {
       const res = await fetch(API_BASE);
+      if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
       const data = await res.json();
       // ensure created field is Date-like or string — keep as-is
       setIssues(data.reverse()); // show newest first
     } catch (err) {
       console.error(err);
-      setError("Failed to load issues from server.");
+      setError("Failed to load issues. Is the server running?");
     } finally {
       setLoading(false);
     }
@@ -67,7 +68,6 @@ export default function App() {
       owner,
       status: "New",
       effort: effort ? Number(effort) : 0,
-      created: new Date(),
       dueDate: dueDate || "",
       completionDate: completionDate || "",
     };
@@ -77,6 +77,7 @@ export default function App() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
+      if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
       const saved = await res.json();
       setIssues((prev) => [saved, ...prev]);
       // clear form
@@ -90,7 +91,8 @@ export default function App() {
   // Delete
   async function handleDelete(id) {
     try {
-      await fetch(`${API_BASE}/${id}`, { method: "DELETE" });
+      const res = await fetch(`${API_BASE}/${id}`, { method: "DELETE" });
+      if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
       setIssues((prev) => prev.filter((i) => i._id !== id && i.id !== id));
     } catch (err) {
       console.error(err);
@@ -102,6 +104,7 @@ export default function App() {
   async function handleClose(id) {
     try {
       const res = await fetch(`${API_BASE}/${id}/close`, { method: "PATCH" });
+      if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
       const updated = await res.json();
       setIssues((prev) => prev.map((i) => (i._id === updated._id ? updated : i)));
     } catch (err) {
@@ -204,8 +207,6 @@ export default function App() {
             <input value={effort} onChange={(e) => setEffort(e.target.value)} placeholder="Effort (days)" type="number" min="0" />
             <label className="small">Due date (optional)</label>
             <input value={dueDate} onChange={(e) => setDueDate(e.target.value)} type="date" />
-            <label className="small">Estimated completion (optional)</label>
-            <input value={completionDate} onChange={(e) => setCompletionDate(e.target.value)} type="date" />
             <div className="add-actions">
               <button className="btn-primary" type="submit">Add</button>
             </div>
@@ -236,8 +237,8 @@ export default function App() {
                         <div className="meta"><strong>Effort:</strong> {editing ? <input type="number" value={issue._editingTemp.effort} onChange={(e) => updateTemp(id, "effort", e.target.value)} /> : `${issue.effort || 0} days`}</div>
                         <div className="meta"><strong>Created:</strong> {formatDate(issue.created)}</div>
                         <div className="meta"><strong>Due:</strong> {editing ? <input type="date" value={issue._editingTemp.dueDate} onChange={(e) => updateTemp(id, "dueDate", e.target.value)} /> : (issue.dueDate || "-")}</div>
-                        <div className="meta"><strong>Est. completion:</strong> {editing ? <input type="date" value={issue._editingTemp.completionDate} onChange={(e) => updateTemp(id, "completionDate", e.target.value)} /> : (issue.completionDate || "-")}</div>
-                        <div className="desc">{editing ? <input value={issue._editingTemp.description} onChange={(e) => updateTemp(id, "description", e.target.value)} /> : issue.description}</div>
+                        {/* <div className="meta"><strong>Est. completion:</strong> {editing ? <input type="date" value={issue._editingTemp.completionDate} onChange={(e) => updateTemp(id, "completionDate", e.target.value)} /> : (issue.completionDate || "-")}</div>
+                        <div className="desc">{editing ? <input value={issue._editingTemp.description} onChange={(e) => updateTemp(id, "description", e.target.value)} /> : issue.description}</div> */}
                       </div>
 
                       <div className="card-actions">

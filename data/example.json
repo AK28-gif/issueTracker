@@ -1,0 +1,202 @@
+[
+  {
+    "title": "Login button not working",
+    "description": "Users cannot click the login button on homepage after UI update.",
+    "owner": "Aishwarya",
+    "status": "New",
+    "effort": 3,
+    "created": "2025-01-05",
+    "dueDate": "2025-01-10",
+    "completionDate": ""
+  },
+  {
+    "title": "Navbar overlaps on mobile view",
+    "description": "The top navigation bar covers half the screen on small devices.",
+    "owner": "Neha",
+    "status": "On Going",
+    "effort": 2,
+    "created": "2025-01-03",
+    "dueDate": "2025-01-12",
+    "completionDate": ""
+  },
+  {
+    "title": "Database connection timeout",
+    "description": "MongoDB connection intermittently drops under heavy load.",
+    "owner": "Ravi",
+    "status": "New",
+    "effort": 5,
+    "created": "2025-01-02",
+    "dueDate": "2025-01-14",
+    "completionDate": ""
+  },
+  {
+    "title": "Export to PDF not generating data",
+    "description": "PDF file downloads empty due to backend data mismatch.",
+    "owner": "Aishwarya",
+    "status": "Completed",
+    "effort": 4,
+    "created": "2024-12-25",
+    "dueDate": "2025-01-05",
+    "completionDate": "2025-01-03"
+  },
+  {
+    "title": "Search filter not updating results",
+    "description": "Users report that search filter shows outdated items until refresh.",
+    "owner": "Karan",
+    "status": "On Going",
+    "effort": 2,
+    "created": "2025-01-01",
+    "dueDate": "2025-01-08",
+    "completionDate": ""
+  },
+  {
+    "title": "Add dark mode toggle",
+    "description": "Provide a button to switch between light and dark themes.",
+    "owner": "Priya",
+    "status": "New",
+    "effort": 6,
+    "created": "2025-01-07",
+    "dueDate": "2025-01-20",
+    "completionDate": ""
+  },
+  {
+    "title": "Incorrect effort calculation in dashboard",
+    "description": "Dashboard shows total efforts as a sum of wrong fields.",
+    "owner": "Ravi",
+    "status": "Completed",
+    "effort": 4,
+    "created": "2024-12-22",
+    "dueDate": "2024-12-30",
+    "completionDate": "2024-12-29"
+  },
+  {
+    "title": "API returns 500 on POST /issues",
+    "description": "Validation missing for description field causing server crash.",
+    "owner": "Aishwarya",
+    "status": "On Going",
+    "effort": 3,
+    "created": "2024-12-29",
+    "dueDate": "2025-01-06",
+    "completionDate": ""
+  },
+  {
+    "title": "Enhance table UI with soft cards",
+    "description": "Replace basic table with modern card-based layout.",
+    "owner": "Neha",
+    "status": "New",
+    "effort": 3,
+    "created": "2025-01-04",
+    "dueDate": "2025-01-18",
+    "completionDate": ""
+  },
+  {
+    "title": "Fix duplicate entries on refresh",
+    "description": "Frontend adds duplicate issues after page reload due to missing key.",
+    "owner": "Karan",
+    "status": "Completed",
+    "effort": 1,
+    "created": "2024-12-27",
+    "dueDate": "2024-12-28",
+    "completionDate": "2024-12-28"
+  },
+  {
+    "title": "Button hover animations missing",
+    "description": "Some buttons have inconsistent hover styles after redesign.",
+    "owner": "Priya",
+    "status": "New",
+    "effort": 2,
+    "created": "2025-01-08",
+    "dueDate": "2025-01-15",
+    "completionDate": ""
+  },
+  {
+    "title": "Improve backend error messages",
+    "description": "Standardize error structure for client-side use.",
+    "owner": "Aishwarya",
+    "status": "On Going",
+    "effort": 3,
+    "created": "2025-01-03",
+    "dueDate": "2025-01-11",
+    "completionDate": ""
+  },
+  {
+    "title": "Implement priority levels",
+    "description": "Add Low/Medium/High priority field for issues.",
+    "owner": "Ravi",
+    "status": "New",
+    "effort": 3,
+    "created": "2025-01-06",
+    "dueDate": "2025-01-22",
+    "completionDate": ""
+  },
+  {
+    "title": "API rate limiting",
+    "description": "Prevent abuse by adding request rate limits in backend.",
+    "owner": "Priya",
+    "status": "New",
+    "effort": 5,
+    "created": "2025-01-10",
+    "dueDate": "2025-01-25",
+    "completionDate": ""
+  },
+  {
+    "title": "Add user authentication",
+    "description": "Add signup/login to restrict access to issue tracker.",
+    "owner": "Neha",
+    "status": "New",
+    "effort": 7,
+    "created": "2025-01-09",
+    "dueDate": "2025-01-29",
+    "completionDate": ""
+  },
+  {
+    "title": "Sorting does not persist on refresh",
+    "description": "Frontend resets sorting to default after refreshing the page.",
+    "owner": "Karan",
+    "status": "On Going",
+    "effort": 2,
+    "created": "2025-01-06",
+    "dueDate": "2025-01-15",
+    "completionDate": ""
+  },
+  {
+    "title": "Add comment system inside issue",
+    "description": "Allow developers to add comments under each issue.",
+    "owner": "Aishwarya",
+    "status": "New",
+    "effort": 4,
+    "created": "2025-01-10",
+    "dueDate": "2025-01-22",
+    "completionDate": ""
+  },
+  {
+    "title": "Allow multiple assignees per issue",
+    "description": "Add support for assigning more than one team member.",
+    "owner": "Priya",
+    "status": "New",
+    "effort": 3,
+    "created": "2025-01-08",
+    "dueDate": "2025-01-17",
+    "completionDate": ""
+  },
+  {
+    "title": "Fix slow initial load time",
+    "description": "Optimize backend query to avoid delay on first load.",
+    "owner": "Neha",
+    "status": "Completed",
+    "effort": 3,
+    "created": "2024-12-20",
+    "dueDate": "2024-12-30",
+    "completionDate": "2024-12-29"
+  },
+  {
+    "title": "Update documentation",
+    "description": "Improve README with backend and database setup instructions.",
+    "owner": "Ravi",
+    "status": "New",
+    "effort": 1,
+    "created": "2025-01-11",
+    "dueDate": "2025-01-13",
+    "completionDate": ""
+  }
+]
