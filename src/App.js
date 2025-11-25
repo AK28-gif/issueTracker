@@ -207,6 +207,8 @@ export default function App() {
             <input value={effort} onChange={(e) => setEffort(e.target.value)} placeholder="Effort (days)" type="number" min="0" />
             <label className="small">Due date (optional)</label>
             <input value={dueDate} onChange={(e) => setDueDate(e.target.value)} type="date" />
+            <label className="small">Completion date</label>
+            <input value={completionDate} onChange={(e) => setCompletionDate(e.target.value)} type="date" />
             <div className="add-actions">
               <button className="btn-primary" type="submit">Add</button>
             </div>
@@ -237,8 +239,8 @@ export default function App() {
                         <div className="meta"><strong>Effort:</strong> {editing ? <input type="number" value={issue._editingTemp.effort} onChange={(e) => updateTemp(id, "effort", e.target.value)} /> : `${issue.effort || 0} days`}</div>
                         <div className="meta"><strong>Created:</strong> {formatDate(issue.created)}</div>
                         <div className="meta"><strong>Due:</strong> {editing ? <input type="date" value={issue._editingTemp.dueDate} onChange={(e) => updateTemp(id, "dueDate", e.target.value)} /> : (issue.dueDate || "-")}</div>
-                        {/* <div className="meta"><strong>Est. completion:</strong> {editing ? <input type="date" value={issue._editingTemp.completionDate} onChange={(e) => updateTemp(id, "completionDate", e.target.value)} /> : (issue.completionDate || "-")}</div>
-                        <div className="desc">{editing ? <input value={issue._editingTemp.description} onChange={(e) => updateTemp(id, "description", e.target.value)} /> : issue.description}</div> */}
+                        <div className="meta"><strong>Est. completion:</strong> {editing ? <input type="date" value={issue._editingTemp.completionDate} onChange={(e) => updateTemp(id, "completionDate", e.target.value)} /> : (issue.completionDate || "-")}</div>
+                        <div className="desc">{editing ? <input value={issue._editingTemp.description} onChange={(e) => updateTemp(id, "description", e.target.value)} /> : issue.description}</div> 
                       </div>
 
                       <div className="card-actions">
