@@ -1,38 +1,66 @@
-.App {
-  text-align: center;
+/* Soft Card UI styles */
+:root{
+  --bg:#f6f8fb;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --primary:#1a73e8;
+  --accent:#f59e0b;
+  --success:#16a34a;
+  --danger:#ef4444;
+  --radius:12px;
+  --shadow: 0 8px 20px rgba(20,30,60,0.08);
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
+body { background: var(--bg); margin:0; color:#111827; }
+.app-soft { min-height:100vh; display:flex; flex-direction:column; }
+.app-header { display:flex; justify-content:space-between; align-items:center; padding:20px; }
+.app-header h1 { margin:0; font-size:20px; }
+.subtitle { color:var(--muted); font-size:13px; margin-top:4px; }
+.brief-link a { font-size:13px; color:var(--primary); text-decoration:none; }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* container */
+.app-container { width:min(1100px,96%); margin:12px auto 60px; }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* controls row */
+.controls-row { display:flex; gap:16px; align-items:flex-start; margin-bottom:18px; }
+.filter-card { background:var(--card); padding:12px; border-radius:var(--radius); box-shadow:var(--shadow); display:flex; gap:8px; align-items:center; }
+.add-card { background:var(--card); padding:12px; border-radius:var(--radius); box-shadow:var(--shadow); flex:1; display:flex; flex-direction:column; gap:8px; }
+.add-card h3 { margin:0; font-size:16px; }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+/* inputs */
+.add-card input, .filter-card select, .filter-card input { padding:8px 10px; border-radius:8px; border:1px solid rgba(0,0,0,0.06); background:#fff; }
+.add-actions { display:flex; gap:8px; justify-content:flex-end; margin-top:6px; }
 
-.App-link {
-  color: #61dafb;
-}
+/* cards grid */
+.cards-grid { display:grid; grid-template-columns: repeat(2, 1fr); gap:12px; }
+.issue-card { background:var(--card); border-radius:12px; padding:12px; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:10px; }
+.card-top { display:flex; justify-content:space-between; align-items:center; gap:8px; }
+.card-title { margin:0; font-size:16px; }
+.status-pill { padding:6px 10px; border-radius:999px; color:white; font-weight:700; font-size:12px; }
+.status-new { background:var(--primary); }
+.status-on-going { background:var(--accent); }
+.status-completed { background:var(--muted); }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* body */
+.card-body { display:flex; flex-direction:column; gap:6px; color:#374151; }
+.meta { font-size:13px; color:#374151; }
+.desc { font-size:14px; color:#1f2937; padding-top:4px; }
+
+/* actions */
+.card-actions { display:flex; gap:8px; margin-top:6px; }
+.btn-primary { background:var(--primary); color:white; border:none; padding:8px 10px; border-radius:8px; cursor:pointer; }
+.btn-outline { background:transparent; border:1px solid rgba(0,0,0,0.06); padding:8px 10px; border-radius:8px; cursor:pointer; }
+.btn-ghost { background:transparent; border:none; color:var(--muted); cursor:pointer; }
+.btn-danger { background:var(--danger); color:white; border:none; padding:8px 10px; border-radius:8px; cursor:pointer; }
+
+/* small states */
+.info, .error, .empty { background:var(--card); padding:14px; border-radius:10px; box-shadow:var(--shadow); }
+
+/* footer */
+.app-footer { text-align:center; color:var(--muted); margin-top:18px; }
+
+/* responsive */
+@media (max-width:900px) {
+  .cards-grid { grid-template-columns: 1fr; }
+  .controls-row { flex-direction:column; gap:12px; }
 }
